@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="./bootstrap-3.3.4-dist/css/bootstrap.min.css">
+		<!-- Mobile scaling friendly -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Custom styles for this template -->
+		<link href="handmade.css" rel="stylesheet">
+
+		<title>Connor Yates</title>
+	</head>
+
+	<body>
+
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="./jquery-2.1.3.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="./bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+	
+		<!-- navbar section -->
+		<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<!-- main button -->
+		
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand" href="./index.html">Connor Yates</a>
+				</div>
+	
+				<!-- Top Navbar -->
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="./projects.html">Projects</a></li>
+                        <!--<li class="active"><a href="./coursework.html">Relevant Coursework</a></li>-->
+						<li><a href="./Connor_Yates_Resume.pdf">Resume</a></li>
+					
+					</ul>
+	
+					<ul class="nav navbar-nav navbar-right">
+                        <li><a href="mailto:yatesco@onid.oregonstate.edu">yatesco@onid.oregonstate.edu</a></li>
+					</ul>
+				</div>
+			</div> <!-- container -->
+		</div><!-- /navbar -->
+
+		<div id="decal"></div> <!-- adds the orange/black decal under the navbar -->
+		
+		<!-- Begin Body Content -->
+		<div class="container">
+            <h1>Highlighted Projects</h1>
+            This is a collection of research and personal projects I work on, presented in no particular order. Be sure to check out my <a href="https://github.com/Sir-Batman">GitHub</a> for the latest updates on these projects!
+            <div class="row">
+                <div class="col-sm-12">
+                <h2>ROS and Neato for Home Convenience</h2>
+                <p>
+                In a shameless attempt to be lazy, I am working on making my Neato XV11 drive to my fridge and bring me a beer. To accomplish this, I use a Raspberry Pi 3 connected to the Neato through the USB serial interface. Using open source ROS nodes for the Neato, I am working on getting reliable mapping and localization within my house.
+                </p>
+                <p>
+                Getting ROS on the Raspberry Pi was a short project all by itself.
+                The Raspberry Pi 3, with a 4 cor ARM processor and onboard WiFi and Bluetooth radios is a useful board for controlling simple robots. To use ROS with the Pi, I decided to stick with Kinetic, as it has pre-built .deb packages for ARM architectures. This means that I need a Debian based OS compatible with Kinetic, which was initially harder to find than I thought. Using the Raspberry Pi build of the Ubuntu Mate distribution, I was able to quickly create a ROS enabled mobile computer that can control the basic operation of my Neato.
+                </p>
+                <p>
+                Further work is still needed to see this project to completion, especially in creating a mechanism for autonomously opening and closing the fridge.
+                </p>
+                </div>
+                <div class="col-sm-12">
+                <h2>Intent Synthesis for Robotic Teams</h2>
+                <p>
+				How do professional human teams perform so well? Part of their success comes from the ability to quickly judge the <em>intent</em> of their other teammates. Without asking, one teammate can make a reasonable guess as to how the others will act; they know where will they go next, what actions will they take. Agents which know this information can choose better actions because they explicit have the information they need to plan around.
+                </p>
+                <p>
+				We avoid central information sharing or direct communication in order to preserve the robust nature of the distributed multiagent team. If agents fail, the performance of the team will smoothly degrade as a function of the remaining agents. If a centralized communication server fails, then the team will immediately be unable to perform. Additionally, peer to peer communication is specifically avoided in this research as we want to investigate how one agent can <em>independently</em> determine what the others are going to do. From a practical standpoint, this is analogous to a robot whose partner has a broken communication antenna, and must be able to determine it's partner's intent from observation alone.
+                </p>
+                <p>
+				This work was central to my undergraduate honors thesis (LINK IT), which contains details on the methods used to locally approximate intent.
+                </p>
+                </div>
+                <div class="col-sm-12">
+                <h2>Multi-Reward Reinforcement Learning</h2>
+                <p>
+				Agents acting in the real world will likely need to balance many different objectives and tasks at once. However, unlike traditional multi-objective optimization or transfer learning domains, the agents will not always be balancing opposing objectives or have a related task to learn from. An agent, such as a autonomous office robot operating on it's own for a long time, will have wildly different tasks in it's day-to-day operation. Additionally, it may be overburdened with tasks, and need to learn which to prioritize over another. This robot needs to identify <em>what matters when</em> for it to be successful in the long-term operations.
+                </p>
+                <p>
+				We first ascribe an individual reward to each task, and train a simple policy to solve it. Then, to identify which task to focus on, we calculate the alignment between each task's reward and a summary global reward. Agents trained on this single global reward fail to perform any of the tasks, whereas agents selecting each policy are able to act with the larger task in mind. Our paper at the ALA 2018 Workshop at AAMAS details our methods for this (LINK).
+                </p>
+                <p>
+                </p>
+                </div>
+                <div class="col-sm-12">
+                <h2>Research Robotics Catching Robot</h2>
+                <p>
+				Actually building a robot to perform a specific task is a non-trivial engineering feat. In 10 weeks of spring term in 2018, our team of Brian Layng, Devon Scheller, and myself created a robot to play a game of catch with a human participant. My work on the robot focused on fully autonomous operation, which focuses on identifying the player and picking an appropriate speed to throw the ball. 
+                </p>
+                <p>
+				The robot was constructed with a baseball pitching machine style thrower, a large net, and a custom-made mechanism to load the caught ball to the thrower. This was assembled and placed on top of a Pioneer 3 robotic base. The entire system was controlled by various ROS packages and custom Arduino motor-controller code. Using the ROS-Arduino bridge and custom controller nodes, the entire robot was able to compete in the class competition, earning 3rd place among the dozens of teams.
+                </p>
+                <p>
+				Our project website (LINK) includes information on the design and performance of the robot, including sever videos of it playing catch with another team's robot.
+                </p>
+                </div>
+            </div>
+		</div>
+	</body>
+</html>
